@@ -9,6 +9,7 @@ st.title('🤖 Machine Learning App')
 
 st.info('This is a machine learning app')
 
+# Expander 1
 with st.expander('Data'):
   st.write('**Raw Data**')
   
@@ -27,3 +28,7 @@ with st.expander('Data'):
   st.write('**y**')
   y = df.species
   y
+
+# Expander 2
+with st.expander('Data visualisation'):
+  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
