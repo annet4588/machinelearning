@@ -22,12 +22,12 @@ with st.expander('Data'):
 
 
   st.write('**X**')
-  X = df.drop('species', axis=1)
-  X
+  X_raw = df.drop('species', axis=1)
+  X_raw
   
   st.write('**y**')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
 
 # Expander 2
 with st.expander('Data Visualisation'):
@@ -53,12 +53,20 @@ data = {'island': island,
         'sex': gender}
 
 input_df = pd.DataFrame(data, index=[0])
-input_penguins = pd.concat([input_df, X], axis=0)
+input_penguins = pd.concat([input_df, X_raw], axis=0)
 
-# Encode
+# Encode X
 encode = ['island', 'sex']
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 input_row = df_penguins[:1]
+
+# Encode y
+target_mapper = {'Adelie': 0,
+                 'Chinstrap': 1,
+                 'Gender': 2}
+
+def target_encode(val):
+  return target_mapper[val]
 
 # Expander 3 - Input features
 with st.expander('Input Features'):
