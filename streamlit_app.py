@@ -20,10 +20,10 @@ with st.expander('Data'):
     st.error(f"Failed to load the file: {e}")
 
 
-st.write('**X**')
-X = df.drop('species', axis=1)
-X
-
-st.write('**y**')
-y = df.species
-y
+  st.write('**X**')
+  X = df.drop('species', axis=1)
+  X
+  
+  st.write('**y**')
+  y = df.species
+  y
