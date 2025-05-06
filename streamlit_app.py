@@ -11,5 +11,12 @@ with st.expander('Data'):
   df = pd.read_csv('penguins.csv')
 
 
-st.write('Current working directory:', os.getcwd())
-st.write('Files in directory:', os.listdir())
+# st.write('Current working directory:', os.getcwd())
+# st.write('Files in directory:', os.listdir())
+
+try:
+  df = pd.read_csv('penguins.csv')
+  st.write("Data loaded successfully")
+  st.dataframe(df)
+except Exception as e:
+  st.error(f"Failed to load the file: {e}")
