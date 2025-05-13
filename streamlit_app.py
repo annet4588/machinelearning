@@ -132,7 +132,7 @@ st.DataFrame(df_prediction_proba,
                   min_value=0,
                   max_value=1
                  ),
-               ), hide_index=True)
+             }, hide_index=True)
 
 
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
