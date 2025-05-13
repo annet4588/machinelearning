@@ -118,14 +118,14 @@ st.DataFrame(df_prediction_proba,
                   min_value=0,
                   max_value=1
                  ),
-                   "Chinstrap": st.column_config.ProgressColumn(
+                "Chinstrap": st.column_config.ProgressColumn(
                   "Chinstrap",
                   format="$%f",
                   width="medium",
                   min_value=0,
                   max_value=1
                  ),
-                   "Gentoo": st.column_config.ProgressColumn(
+                "Gentoo": st.column_config.ProgressColumn(
                   "Gentoo",
                   format="$%f",
                   width="medium",
