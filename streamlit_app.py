@@ -34,7 +34,7 @@ with st.expander('Data Visualisation'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
 
 
-# Data Preparation
+# Input Features
 with st.sidebar:
   st.header('Input features')
   island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgersen'))
@@ -55,6 +55,14 @@ data = {'island': island,
 input_df = pd.DataFrame(data, index=[0])
 input_penguins = pd.concat([input_df, X_raw], axis=0)
 
+# Expander 3 - Input features
+with st.expander('Input Features'):
+  st.write('**Input Penguin**')
+  input_df
+  st.write('**Combine Penguins Data**')
+  input_penguins
+
+# Data Preparation
 # Encode X
 encode = ['island', 'sex']
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
@@ -72,13 +80,11 @@ y = y_raw.apply(target_encode)
 y
 y_raw
 
-# Expander 3 - Input features
-with st.expander('Input Features'):
-  st.write('**Input Penguin**')
-  input_df
-  st.write('**Combine Penguins Data**')
-  input_penguins
-  st.write('Encoded Input Penguin')
+#Expander
+with st.expander('Data preparation')
+  st.write('**Encoded X (Input Penguin)**')
   input_row
+  st.write('**Encoded y**')
+  y
 
 
